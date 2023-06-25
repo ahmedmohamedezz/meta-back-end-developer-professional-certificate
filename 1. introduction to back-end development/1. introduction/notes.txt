@@ -1,0 +1,37 @@
+- when you eat at a restuarant , usually different chifs prepare different parts of the meal . similarly for websites and apps you use every day . many rolos are involved in delivering these apps to users .
+
+- web developers roles : 
+1. front end 
+  . front end developer is some that works on all parts of a website that users will interact with ( colors , buttons , menus , user interactions as they click , swipe , and interacte with the site
+  . skills of front end developer can vary , but they always focus on 3 leading technologies ( html , css , and java script )
+  . HTML is used to define the structure of your page ( buttons , input fields ) , then CSS is used to layout , style , and position html elements , and finally JS to process the activity of users ( interactions ) => when user clicks a button send something to data base , trigger some action , or validate some inputs .
+  . tho most critical skill out of those 3 is javascript , because it's versatility and the fact that it's paired with powerful libraries and frame works like react from meta that could be used to build websites that are fast , secure , and scalable .
+
+2. back end 
+  . back end developer is the one that works on parts of the website that end users don't see 
+  . back end developers are responsible for creating and maintaining functionality when users request information or when the website needs to communicate to another part of the web architecture => ex. \ performing an account , log in , completing online purchase using credit card
+  . back end developer will faciliate the interaction of the website and the content stored in data base .
+  . knowledge and technologies used can vary , but fundumentally consist of knowledge relating to ( back end programming language , data base management system , API's , and web servers ) .
+  . back end development usually requires a more long road than front end , that's because you must have a proficient understanding of the needs of front end technologies ( inner workings of internet networks and servers
+
+3. full stack 
+  . full stack developer is someone equally comfortable working with both front and back end technologies => have skills and knowledge in all the areas of the web development project cycle , so they have a relevant expertise in the planning architecture , desing , development , deployment , and maintainence of the website
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
