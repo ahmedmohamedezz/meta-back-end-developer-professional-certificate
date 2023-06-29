@@ -1,0 +1,122 @@
+- Introduction to internet protocols : 
+- computers send and recieve data everyday in way that is similar to traditional postal system
+- just as we have must have addresses to send postal mails to each other , computers also have IP addresses
+- a common way of understanding data is needed by computers & networks that the data travels across => what makes that possible is the internet protocol "IP"
+- IP version 4 and 6 are the most widely used standards now 
+	- in version 4 the address consists of 4 octets separated by dots ==> 192.0.2.235
+	- in version 6 , address contains 8 groups of hexadecimal digits separated by colons ==> 2001:db8:3333:4444:5555:6666:7777:8888
+- data is sent across a network in a series of msgs called "IP packets" or "data grams"
+- ip packets consists of header + payload ( data )
+- the header contains : source & destination ip addresses , and additional info to help deliver the packet
+- payload contains the data of the msg , and some protocols TCP , or UDP ( you can think of them as another msgs in the payload )
+	- TCP : transmission control protocol    , UDP : user datagram protocol
+- as things can go wrong with postal mail , Ip packets too can have problems like : 
+	- arrive out of order
+	- can become corrupted / damaged
+	- can get lost
+- tcp can solve all the 3 mentioned problems , it's used for data that must arrive correclty and in order ( text , img files )
+- udp solves corruption issue , but packet can still arrive out of order ( or not arrive at all ), it's used with data that can tolerate some data loss ( voice , video )
+- both protocols contains payload that has further protocols in them
+
+                                                                  ------------------------------------------------------------------------------------
+
+- Introduction to HTTP : 
+- you may have notices the lock icon before the url in the browser ? that's mean that the secure version of HTTP ( HTTPS ) is used
+- http is a core operational protocol of the world wide web , it's what allow your website to communicate the webserver hosting it
+- foundation of data exchanges on the web
+- http stands for : hypertext transfer protocol
+- http is a protocol used to transfer web resources such as : html documents , images , styles , and other files
+- http is request-response based protocol => client send http request to the web server , and server respondes back with a http response
+- http protocol has several version , but the most commonly used are 1.1 and 2.0
+- http request
+	- consists of : method , path , verion , and headers
+	- method : specify the type of action the client performed
+	- most commonly methods are : GET , POST , PUT , DELETE
+		- GET : used to retrieve data from server
+		- POST : to send data
+		- PUT : to update data that is currently on the sever with something else
+		- DELETE : used to remove resources
+	- path : where the file is stored on the server ( full path ==> domainName/.../.../resource ) 
+	- headers : contain addetional info about the request , and the client making the request 
+	- for certain request methods , the request will contain a body of content ( that the client sending )
+- http response 
+	- follow a similar format to the request format
+	- the response can optionally contain a msg body consisting of the response contents ( html document for example )
+	- http status codes contained within the header to indicate if the http request successfully completed
+	- code values range from 200 : 599 , and are grouped by purpose ( the text representation of the status code ==> status msg )
+	- there are 5 groups of status codes , grouped by the first digit of the error number
+	
+	- informational [ 100 , 199 ] : provisional responses sent by the server , these are temporary before the actual response
+		- most common => 100 continue , which indicates that the client should continue to request or ignore the response if the request is finished
+	
+	- successful [ 200 , 299 ] : indicate that the request is successfully process by the server ( most common is 200 ok => content recieved successfully )
+	- ok meaninig depends on the method
+		- get => ok found , and included in response                - put : successfuly transmitted to server
+		- post => successfully transmitted to server              - delete : removed successfuly
+	- redirection [ 300 , 399 ] : indicate that the requested resource has been moved to a different path , the most common responses are :
+		- 301 : removed permanently
+		- 302 : found ( removed temporarily )
+	- when browser recieve these responses , they are automatically request the resource at the new path
+	
+	- client error responses [ 400 , 499 ] : indicate that the request contained bad syntax or content , and can't be processed by server , the most used are :
+		- 400 : when client submit bad data to server                        - 401 : user must log in to account first
+		- 403 : valid request , but server refuses to process it ( user may don't have the permission )
+		- 404 : requested resource isn't found on server
+	
+	- server error responses [ 500 , 599 ] : indicate failure occured on the server , when trying to process the request , the most used :
+		- 500 internal server error : generic error indicates that the server failed to process the request
+
+- when you enter sensitive data for some purpose , surely you don't want anyone to get that data from the request , here comes HTTPS
+- https secures the communication between 2 computers using encryption , so that no one can see the inforamtion contained in the request
+- the requests and the responses goes exaclty like http , the difference is that before the data is sent it's encrypted into secret code that only the other computer can understand it and turn it back to it's original content
+- with https , if someone looked at that secret code it wouldn't be understandable to him
+
+                                                                  ------------------------------------------------------------------------------------
+
+- http examples
+
+- every http request begins with the request line ( method + resource + protocol version ) : GET /home.html HTTP/1.1
+- methods indicate the action the client wishes to perform on the server resource
+- after the request line , comes the headers
+- header : case sensitive name followed by : and then a value
+- header examples 
+	- Host : specify the host of the server & indicated where the resource is requested from
+	- User-Agent : informs the server of the application making the request ==> ( os + vendor )
+	- Accept : informs the server what type of content the client will accept as the response
+	- Accept-Language : indicates the language ( and optionaly the locale ) that the client prefers
+	- Content-type : indicated the type of content being transmitted in the request body
+- http request body is often included with PUT and POST methods to transmit data
+
+- the first line in the response is the status line , which shows the client if the request processed successfully or not
+- status line = http version + status code + status msg
+- codes : 
+- 100 continue : server recieved the request headers , and should continue to send the request body
+- 101 swithing protocols : the client requested to switch protocols , and the server agreed to do so 
+
+- 200 ok : standard response to indicate that request is successfully processed
+- 201 created : successfully processed and resource created
+- 202 accepted : the server accepted the request , but still processing it
+- 204 no content : successfully processed but it's not returning any content
+
+- 301 moved permanently : this and all future requests should be send to the returned location
+- 302 found : this request should be sent to the returned location
+
+- 400 bad request : server can't process request due to client error ( invalid request , or transmitted data it too large )
+- 401 unauthorized : client should authenticate
+- 403 forbidden : request is valid , but user don't have the permission ( request an administrator action , but the user is not an administrator )
+- 404 not found : server didn't found the requested resource
+- 405 method not allowed : server doesn't support the HTTP method used
+
+- 500 internal server error : unexpected error / condition occured while processing the request
+- 502 bad gateway : web server recieved an invalid response from the applcation server
+- 503 service unavailable : server can't process the request
+
+- after the status line , optionally there can be response headers
+- examples : 
+	- Date : specifies the date and time the response was generated
+	- Server : describe the web server generated the response
+	- Content-Length : describe length of the response
+	- Content-Type : describes the media type of the resource returned ( ex. html doc , img , video , ..etc )
+- after the headers , comes the response body ( main content of the response ) => this can contain imgs , videos , html docs , and other media types
+
+
