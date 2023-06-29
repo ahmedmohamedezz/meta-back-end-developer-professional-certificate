@@ -1,0 +1,106 @@
+- How The Internet Works ?
+- network is made by at least 2 devices that connect & communicate via a wired or wireless connection .
+- you can connect multiple devices to network , but to make all of them connect to each other and communicate it will be very complex very quickly , why ?
+	- that's because you need to connect every device to all devices , is there a solution ? YES
+	- switches solves this problem by connecting all devices in a network to it , and it will let them connect to each other and communicate .
+- networks can be conneted to each other via switches ( switches connect devices & networks too ) .
+- multiple switches can be connected together to form an interconnected network like the internet
+- when you use a website or any video streaming services , these are provided by computers called "servers" , our devices are called clients .
+	- this is called the client-server model
+- data travel through large undersee cables connecting the world networks
+	- these cables can transfer huge volumes of data per second
+- ofcourse there is another more technical details that makes the internet possible , but this is the main idea .
+
+						-----------------------------------------------------------------------------------------
+
+- Web Servers
+- server : computer that runs application & services ranging from websites => instant messaging
+- servers are called like this because they provide a service to another computer and it's user ( provide services to clients )
+- server is stored in something called "data center" with another hundreds or thousands of servers all running different services connected to the internet .
+- data centers have many systems to ensure that servers have continuous power and connected to the internet , and kept called 24 hours per day
+- data centers are located all around the world ( many websites use this to let you access your content quickly through the nearst data center to you )
+- servers are build based on the service purpose .
+	- server for storing imgs may consist of a lot of hard drive space , while a server that computes complex calculations might need a fact processor and a lot of memory .
+- drives , proccors , and memory are usually refered to "server hardware" => physical components of the server
+- after hardware is installed , a piece of code can now run on it called => "server software"
+- hardware is something you can touch , and is difficult to change      ,,, while software can't be touched and easy to change
+- one type of servers is "web server" = service software
+- web servers has many functions like managing emails ,handling security ,it also can function as a website storage and administration , and data storage .
+- web servers can handle "web request" => primary function in web servers
+	- when you search for a website , it's the role of the web server to send you back that website's content ==> process of "request response cycle"
+- web servers have to be able to handle thousands of requests from clients per second
+
+						-----------------------------------------------------------------------------------------
+
+- Websites and Webpages 
+- web page : document that displays images , text , videos , and another content in the web browser
+- web site : collection of web pages connected together
+- if several web pages have similar address in the web browser => they belong the same web site
+- links on a web page don't have to connect to pages on the same web site ( they can link other web sites )
+- web page => simply a text document , that you can edit it using any text editor
+- web pages are based on 3 technologies : html , css , and java script
+- Html : structure the content you see
+	- html stands for "hyper text markup language" , it works using markup tags => these tags describe the content displayed in the browser
+	- this content can be ( paragraphs , headings , audio , video , images )
+	- the way html describes the content is called "markup"
+- Css : controls the colors and the style
+	- css is a shorthand for "cascading style sheets" , used to add visual enhancements like colors & layouts ( css is used for styling )
+	- css tells html elements how to be displayed
+- JavaScript : responsible for user interaction
+	- Js is a programming language built into the browser , provides tools to developers for ( interactivity , data processing , control , and action )
+	- Js has the ability to manipulate the content you see as you interact with
+- how that code is translated into web pages ?
+	- when a copy of a web page is sent from the server to the browser , each line of code is processed in sequential order from first to last
+	- as each line is interpreted , the browser creates the building blocks => visual representation you see on the screen
+	- this creation process is known as "page rendering"
+	- the response from the server => complete web page
+
+						-----------------------------------------------------------------------------------------
+
+- Web browser
+- web browser or "browser" is  a software application you use to browse the world wide web
+- how it works ? by sending a request to web server , and recieves a response containing the content that is to be displayed on the screen of your device
+- on the top of the web browser you will find the address of the website you're currently using => aka "URL" : uniform resource locator
+- URL contains : protocol "http" + domain name "website name" + location "file path or path to the page displayed"
+- when making a request using the url , the browser and the server communicate using a protocol called http => "hypertext transfer protocol"
+- exchange of information is made by "request response cycle"
+- let's simulate what happen with an example :
+	1. first you open the browser and type the name of you want to search for ( what you type contains the domain name )
+	2. after you press enter , the web browser sends a request across the network to another computer called web server
+	3. web server respondes by sending a web page back to the web browser
+	4. after recieving all the response info , the web page is made visible
+	5. the web page is a coded document that is rendered by the browser
+	6. once again you search for something , the web browser sends a request to search engine web server with keywords , or additional instructions
+	7. web server processes the request by taking the keyword and using it to find the requested data 
+	8. data is stored on ==> "data base" , which is connected to the web server
+	9. finally the web server picks up the data , and sends it to the browser to be rendered
+
+						-----------------------------------------------------------------------------------------
+
+- Web hosting
+- after you knew that web sites and files are stored on web server , which is located in data centers
+- do you need your own data center to create your own website ? NO , but you use something called "web hosting"
+- web hosting is a service where you can store your web site and files on the hosting companies web servers
+	- you're renting space in return for stable and secure storage ( companies / individuals can rent space )
+- hosting options 
+1. shared hosing
+	- cheapest form of hosting
+	- you pay for a location on a web server that is shared with other web hosting accounts
+	- this means you also share ( service processing power , memory , and bandwidth ) , which may slow your performance
+	- this option is the best for small websites with a small number of visitors , and also can by used by developers to practice deploying thier own sites
+	- some companies offer free shared hosting , with limitations => advertisements in the web page
+2. virtual private hosing
+	- sites with considerable demands use virtual private surface "VPS"
+	- VPS : virtaul server with dedicated cpu , memory , and bandwidth resources 
+	- VPS is running on a hardware server with other instances of VPS ( but the resources are fixed per instance => other don't slow you )
+	- this option is more expensive than shared hosting
+3. dedicated hosting
+	- hardware server that is dedicated to you only ( cpu , memory , bandwidth ) are all yours to use
+	- this option is more expensive than VPS hosting
+4. cloud hosting
+	- your web site runs in something called "cloud environment" , which spans across multiple physical and virtual servers
+	- if one of the servers failed , your website will run on another and stay online
+	- the advantage of cloud hosting is that you can use as many resources as you need without hardware limitations
+	- you pay for resource use => pay for the bandwidth used for transferring files
+	- this allows websites and web applications to scale thier costs as popularity grows ( this is how many of the major web apps operate )
+	- cloud allows you to run your web site on multiple virtual and physical web servers

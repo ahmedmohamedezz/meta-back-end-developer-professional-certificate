@@ -1,0 +1,42 @@
+1. What's a web server ==> link : https://www.nginx.com/resources/glossary/web-server/
+  - a web server stores & delivers the content of a web site to clients that request it 
+  - clients request data when they click on a link , or downloads a document on a page displayed in the browser
+  - web server communicates web browser using HTTP 
+  - the content of the web site can be static ( text , imgs ) , or dynamic ( list of items purchased )
+  - to deliver dynamic content , most web servers support server-side scripting languages to incode business logic into the communication
+  - common languages used : php , ruby , python , javaScript
+  - web acceleration : web server may cache content to speed the delivry of commonly requested content
+  - in virtaul hosting : the web server can host multiple web sites 
+  - web servers can limit speed of response to different clients to prevent a client for dominating resources
+  - web servers can be used to communicate between web clients and servers in LANs , and can also embedded into devices
+
+2. What's a web browser ==> link : https://www.mozilla.org/en-US/firefox/browsers/what-is-a-browser/
+  - web browser takes you anywhere in the internet , it retrieves info from other parts of the web and displays it on your device
+  - info is transferred using HTTP , which define how text, imgs , and videos are transmitted on the web
+  - this info needs to be shared and displayed in a consistent format so that people using any browser , anywhere in the world can see the information
+  - not all browser makers choose the same format for interpreting content , so this means a website can look and function differently for users
+  - we need to create a consistency between browsers ==> this process is called web standards
+  - websites save info about you in files , called cookies => they are saved on your computer for the next time you visit that site
+  - cookies made is possible to remember your favorite mode in a website ( night mode / dark mode )
+  - third-party cookies come from sites you're not visiting at the time , and can track you to gather info about you that can later be sold to other companies
+  - private or incognito browsing don't hide your identity or your history from ISP , governments , and  advertisers
+  - you can use extensions to add extra functionality to your browser .
+
+3. Who invented the internet and why ? ==> link : https://www.youtube.com/watch?v=21eFwbb48sE&feature=youtu.be
+
+4. What is cloud computing ? ==> link : https://www.youtube.com/watch?v=mxT233EdY5c
+  - cloud computing : on-demand delivery of IT resources via internet with pay-as-you-go-pricing
+  - you access computing power , data bases , ...etc from the cloud provider => such as AWS ( amazon web services )
+  - you pay for the IT you use
+
+5. Browser engines ==> link : https://en.wikipedia.org/wiki/Browser_engine
+  - browser engine / layout engine / rendering engine is a core software component of every browser
+  - browser engine job is to translate the HTML documents and other resources of a web page into an interactive visual representation on a user's device
+  - it parses input data , apply styles and layouts , render graphics elements , handle interactivitiyi , ...etc
+  - browser engine isn't a stand alone program ( built in into browsers )
+  - in addition to layout , it forces security policy between documents , handles navigation through hyperlinks and data submitted through forms , and implements the DOM
+  - executing JS code is a separate matter , JS engine is used for that ( implementation is decoupled from browser engines )
+  - browser engines are not just used in web browsers , but also in "Email clients"
+
+
+
