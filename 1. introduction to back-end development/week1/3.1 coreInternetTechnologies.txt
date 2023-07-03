@@ -119,4 +119,159 @@
 	- Content-Type : describes the media type of the resource returned ( ex. html doc , img , video , ..etc )
 - after the headers , comes the response body ( main content of the response ) => this can contain imgs , videos , html docs , and other media types
 
+                                                                  ------------------------------------------------------------------------------------
+
+- Intro to html , css , and js
+- html files contains the code that specifies the elements in the page ( content ) , without any styling , sizing , or positioning details
+- html files reference css and js files , the browser retrieves the css file and process it , the css code provides styling details ( position , size , color , font type and size , background , size ) of each element in the page
+- finally the browser retrieves the js code and processes it , the js code can be used to dynamically update the content ( update the clock in the page ) , or for interaction purposes like ( adding events on clicks , hovers , ...etc )
+- CSS files are used to format & style your app , and JS files are used to implement the core function of your app and user interactivity
+
+                                                                  ------------------------------------------------------------------------------------
+- Other Internet Protocols
+1. Hypertext transfer protocols ( HTTP ) are used on the top of transmission control protocol ( TCP ) to transfer webpages and other content from websites
+
+2. Dynamic host configuration protocol ( DHCP ) 
+  - you know that computers need IP addresses to communicate with each other 
+  - when your computer connects to a network the DHCP is used to assign your computer and IP address 
+  - your computer communicates over a UDP ( user datagram protocol ) using the protocol with a type of server called "DHCP server" 
+  - the DHCP server keeps track of computers on the network and thier IP addresses , it assigns your computer an IP address and respond over the protocol to let it know which IP address to use
+  - once your computer have an IP address , it can communicate with other computer on the network
+
+3. Domain name system protocol ( DNS )
+  - your computer needs a way to know with which ip address to communicate ? 
+  - when you visit a website , your computer checks with the DNS server associated the domain name and returns the correct ip address
+
+4. Internet message access protocol ( IMAP )
+  - you're usually using email services a lot , your device needs a way to download email & manage your mail box on the server storing the emails => this is the purpose of the internet message access protocol
+
+5. Simple mail transfer protocol ( SMTP )
+ - with IMAP you now have the emails on your device , when you need to send an email to another client SMTP is used
+ - allows clients to submit email via SMTP server , you can also use it to recieve emails from a client ( but IMAP is more commonly used )
+
+6. Post office protocol ( POP ) 
+  - used to download email from the server to clients , the main difference of using it instead of IMAP is that , POP deletes the msgs from the server once you have them on your device
+  - although it's no longer commonly used , developers often use it to implement email automation as it's more straightforward than IMAP
+
+7. File transfer protocol ( FTP )
+  -  when running your website on the internet , you will need a way to send files from your computer to the server
+  - FTP is used to list , send , recieve , and delete files on a server
+  - the server must run an FTP server , and you need an FTP client on your machine
+
+8. Secure shell protocol ( SSH )
+  - working with servers , you'll need a way to log in and interact with the computer remotely 
+  - using an SSH client you can connect to an SSH server running on a server to perform commands on the remote computer
+  - all data sent over SSH in encrypted => third parties can't understand the data transmitted  ( only the sender and reciever understand )
+
+9. SSH file transfer protocol ( SFTP ) called ( secure file transfer protocol )
+  - using regular FTP , data is transmitted insecurely , this means that third parties can understand the data transmitted
+  - this is not right if you're sending sensitive files ( company DB or software files for ex. ) 
+  - to solve this problem SFTP is used to send files over SSH , which guarantee that the data is encrypted and transmitted securely
+  - most FTP clients support SFTP protocol
+
+                                                                  ------------------------------------------------------------------------------------
+- Webpages , websites , and web Apps
+- a webpage is a single file ( html+css+js ) that displays some content on the web browser
+- website is a collection of webpages that link under one domain name ( linked using hyperlinks )
+- hyperlinks called like that because the link to hypertext content ( html pages )
+- remember links don't have to link to the same website
+- websites are moro informative , web apps are more dynamic ( interactive )
+- in web sites you see informations ( may be about the web site , or some documents )
+- in web apps you see dynamic , interactive , and personalized content ( every user sees his own order for example ) 
+  
+                                                                  ------------------------------------------------------------------------------------
+
+- Developer tools 
+- as a developer , if your front end isn't working as expected you can open the hood to check what's going wrong
+- with developer tools => you can check your code , and others code
+- to open developer tools of a website => F12 key in chrome ,, or command + J in mac ,, or you can write click and select inspect
+- most used tabs in dev tools :
+	- console : outputs errors and logs of JS code in your web app
+	- sources : shows all content resolved for the current page ( html + css + js + img + videos )
+	- network : allow you to inspect the timeline , and details of http requests and response for the web page
+	- performance : shows what the browser is doing over time , it's useful if your app is running slow ( you can pinpoint function that take most of the time )
+	- memory : displays the parts of your code that consumes the most resources
+	- elements ( most used ) : lets you inspect documents , html elements and thier properties
+		- when hovering over an element in elements tab => it highlights that element in the page
+		- on the right side you will find tabs for inspecting the details of each element 
+		- on those tabs you can see the css applied to the element
+		- if you click on the html , you can change it temporarily in the browser ( don't affect the server content )
+
+                                                                  ------------------------------------------------------------------------------------
+
+- Frameworks and libraries
+- as you're developing , you need to save time and build faster ( speed up development ) 
+- during your development , you will encounter several problems have beed solved before by other people 
+	- and those solutions are contained in frameworks and libraries 
+- frameworks and libraries developers use maybe open source => which means the source code is freely available for anyone to modify & build from
+- Difference between library and framework :
+  1 - library : reusable pieces of code that is purpose-built to provide a specific functionality
+		- ex.\ while building your app , you need to validate email addresses of clients => it doesn't make sense to spend hours and days reading & implementing the standards while it's already implemented in trusted libraries 
+  		- so developers can use those libraries to save time and continue with thier development process
+  2 - frameworks : provide a structure for developers to build with
+	- devs provide thier own code that interact with the framework code
+	- frameworks can handle functionality that is common to all web apps like ( sending & recieving http requests and responses )
+- most frameworks use many libraries that can be used for your app
+- along with frameworks you can use other libraries
+- libraries can be replaced as needed , but it's hard with frameworks
+- frameworks 
+   - adv
+	- save dev time & enforce a structure on how code is written
+	- already have best practices already in place and contain most of the needed to develop a web application
+   - disadv
+	- sometimes you find that the way you need to code something doesn't fit the framework structure
+	- sometimes framework libraries conflict with other libraries you're required to use ( cause compatibility issues )
+- libraries
+   - adv
+	- can be replaced as needed
+   - disadv
+	- if no framework is used , the dev will need to decide which set of libraries to use to achieve the functionality that must be delivered
+	- dev may also take care that the chosen libraries can work together ( compatibility )
+- finally , libraries and frameworks lets reuse existing web apps funcitions => reuslt in faster development , fewer errors , more time you have to spend on essential features of your application 
+- instead of reinventing the wheel , you can use libraries and frameworks that are designed specifically to help your web app development process
+
+                                                                  ------------------------------------------------------------------------------------
+
+- APIs and services
+- API is the acronym of "application programming interface" : set of methods and procedures to create applications that access data/features of an operating system , application , or other service
+- APIs are like bridges between different components or systems ( can also be named gateways / middleware ) 
+- common type of APIs ( brower apis , rest apis , sensor-based apis )
+	1. browser/web APIs : built in the browser , they extend the functionality of the browser by adding new services
+	  - desinged to simplify complex functions , and provide easy syntax for building advanced features
+	  - ex. \ DOM API => turns html document into a tree of nodes represented as JS objects
+	  - ex. \ Geolocation API => returns coordinates that represent where the browser is located
+	  - other ex. \ Fetch API ( fetching data ) , Canvas API ( graphics ) , history API ( keeping history ) , web storage API ( for client side storage )
+
+	2. Restful / Rest API ( also called "web servers" ) : provides data for web and mobile applications
+	  - webserver that provides responses and requests
+	  - rest = representational state transfer => set of principles that help build efficient APIs , is mainly responsible for sending and recieving data to and from a centralized data base
+	  - we can query our own rest api of third party ones
+	  - must be able to ( get , post , put , delete ) data
+
+	3. sensor-based API : this is what IOT ( internet of things ) is based on 
+	  - physical sensors that are connected to each other , and communicate through api
+	  - can also track and respond to physical data ( ex.\ philips hue , smart lights , and node bots )
+
+- Restful api uses endpoints to specify how different resources can be accessed , the endpoint is build into the URL when accessing the api 
+- when the endpoint is hit => the api performs whatever service side processing is needed to build the response
+- 2 common responses : full web pages   ,, or data form based on JS called JSON
+
+                                                                  ------------------------------------------------------------------------------------
+
+- IDEs ( integrated development environment ) is a software for building applications , it's similar to text editor but instead of writing text you write code
+- IDE can be specific to one programming language , or support multiple ones
+- IDEs features : 
+	1. syntax and error highlighting
+	2. auto complete & intellsense ( auto complete for my functoins and variables , not just the language keywords )
+	3. refactoring ( changing the structure of the code , and not the functionality ) => changing a function name called several times in multiple places
+	4. and more features ( some to help investigating errors and bugs )
+- you can extend thier functionality by using plugins & extensions
+
+                                                                  ------------------------------------------------------------------------------------
+
+- notes 
+- to communicate with another computer on a network , your computer sends an IP packet
+- computers communicate using IP protocol
+- web browser and web server usu HTTP to transfer data
+
 

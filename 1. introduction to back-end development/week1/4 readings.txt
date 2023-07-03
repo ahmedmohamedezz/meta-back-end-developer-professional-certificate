@@ -1,0 +1,24 @@
+- http is a protocol for fetching resources ( such as html docs ) , it's the foundation of any data exchange on the web 
+- http is client-server protocol which means that the requests are inititated by the recipient ( browser usually )
+- a complete document is reconstructed from the sub-docs fetched ( ads from ads-server , html and css from web-server , imgs from imgs-server , and so on )
+- client and server communicate by exchanging msgs ( requests and responses )
+
+								--------------------------------------------------------------------------------------
+
+- components of http-based systems :
+1. client ( user agent ) : any tool that acts on behalf of the user ( usually the web browser )
+	- the browser is always the entity that initiates the request ( never the server )
+	- to display a web page , the browser first send a req. to fetch the html document then it parses it and send extra req. to fetch other resources ( css files , image , and videos )
+	- then browser combines all the resources to present the complete doc => web page
+	- scripts executed can fetch more resources in later phases and update the web page
+	- a web page is hypertext document , which means that it may contain links to other pages to let the user navigate through the web , the browser translates those clicks into http request
+
+2. the web server : on the opposite side of the communication channel is the server , which serves the documents as requested by clients
+	- server appear as one machine virtually , but it may be collection of servers sharing a load , or other software ( database server )
+	- server is not necessarily on a single machine , but several server instances can be hosted on the same machine 
+	- with http 1.1 and the host header they may share the same ip address
+
+3. proxies : between the browser and the server , numerous computers and machines exist
+	- can be transparent => forwarding the req to the server without altering them
+	- non-transparent => alter req in some way
+	- proxies can perform several functions : caching , filtering (anti virus) , load balancing , authentication , logging

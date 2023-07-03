@@ -1,0 +1,5 @@
+- ANSWERS WILL NOT BE INCLUDED
+1. what you can do with developer tools in the browser ?
+2. what deos libraries provide ? 
+3. what's an API ?
+4. what are the benefits of using an IDE ?
