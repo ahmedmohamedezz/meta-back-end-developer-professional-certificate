@@ -1,0 +1,146 @@
+- What is hypertext markup language ?
+
+- html document is like a frame to the web page , or basic structure assembled using different elements and tags
+- how it started ? sir "tim berners-lee" a physicisit thought about how he and his friends all around the world could share information
+- the first web page was created in 1999
+- tim worked at the  "european organization for nuclear research"  or  "CERN" , and proposed html
+- the first version of html was released in 1991 along with the first web browser and web server
+- hypertext : is a text that contains links to other text , markup : refers to tags and elements used in the document
+- the extention of html file is ( .html )
+- html element consists of opening tag enclosed inside angle brackets <p> 
+- most elements are paired with closing tag </p> , elements usually have content inside them => <p>this is a paragraph</p>
+- elements can contain other elements
+- elements can be empty or self-closing , which means that they don't have a closing tag
+	- with empty tags , you can put / before the ending angle bracket or not ==> <br> or <br/>
+- html specification : rules and structure for html elements and tags
+	- specification is maintained by "world wide web consortium" or "W3C"
+	- when ever specification changes => new version of html is released ( current version is 5 )
+- to sum up : html doc is a set of elements forming the structure of the web page
+- if you want to tell the browser how those elements should be displayed , you should use html
+- usually the first page returned when you visit your favorite web site is called "index.html"
+
+								---------------------------------------------------------------------------------
+
+- HTML Documents
+
+- html docs don't need to be hosted anywhere , you can view them using only the browser , and they also can be saved locally as any other file
+- the standard structure of html docs must start with the <!DOCTYPE html> element
+- the doctype element is used to notify the browser that this is a html file
+- after doctype elmement comes the <html> ... </html> tag which is called the root element
+- inside html tag there are 2 main elements : <body> and <head> elements
+- head element :
+	- nothing inside this element is displayed in the web page in the browser
+	- in it you add information or metadata about the html document : <title> , link css and js files
+		- title element is used to set the name of the web page tab in the browser
+	- meta tags can specify the description of the page , keywords for search engines , the order of the web page
+- body element : 
+	- contains the content of the page ( paragraphs , imgs , headings , and videos )
+
+								---------------------------------------------------------------------------------
+
+- Simple html tags
+1. headings : allow you to display titles and subtitles on your page
+	- headings differ from <h1></h1> to <h6></h6> from largest to smallest
+2. paragraphs : <p></p> contain text content ( interpreted as one line => extra white spaces "space , tab , or enter buttons" are igonred )
+3. line break tag : <br> to start a new line , you must specify it directly though that tag ( self closing tag )
+4. strong : <strong></strong> used to indicate that a range of text has IMPORTANCE
+5. bold : <b></b> used to draw the reader attention , NOT to mention that this text is important
+	- it may look like the <strong> tag , but the logic of usage differ
+6. emphasis : <em> used to emphasis the text
+7. italics : <i></i> used to offset a range of text
+	- <i> and <em> have the same visual effect in the browser , they differ only in the meaning
+	- <em> used to stress the text in them ==> i <em>reeeally> want ice cream</em>
+	- <i> used for technical terms , titles , thought , or a phrase from another language => my fav book is <i>Dracula</i>
+	- Screen readers will not announce any difference if an italics tag is used
+8. lists : <ol> and <ul> are used to add lists
+	- we have 2 types of lists ( ordered , unoredered )
+	- use <li></li> for each list item
+	- ex. 
+	- <ul>
+	- 	<li>one</li>	
+	- 	<li>two</li>
+	- </ul>
+9. div tags :<div></div> defines the content of a division of the html document , it's a generic container and has no effect on the content unless it's styled with css
+	- div effect won't be shown in the page untill css is used
+10. comments : if you want to leave a comment in the code for other developers, it can be added as:
+	- example :       <!-- This is a comment --> 
+	- comments aren't displayed in the browser
+
+								---------------------------------------------------------------------------------
+
+- Linking documents : to link pages together , you need the anchor tag <a href=""> </a>
+	- ex. \ <a href="where the link should navigate to">describtive text</a>
+
+- Adding images : use the <img src="" alt=""> tag
+	- attributes => src ( img link ) , width , height
+	- alt attribute : improves accessibility for people who use assistive technologies (screen readers ) , and it can improve search engine rankings
+		- text in alt attribute is not displayed in the site as long as the img is available
+
+- Adding tables :
+- use <table> </table> tag to contain the table rows and table data in it
+- use <tr></tr> : add table row tag ( line of information in the table )
+- use <th></th> : add headings to the table
+- use <td></td> : add data in each cell
+- ex. \
+- <table>
+- 	<tr>
+-		<th>item</th>
+-		<th>price</th>
+- 	<tr>
+-		<td>falafel</td>
+-		<td>50$</td>
+-	</tr>
+-	</tr>
+- </table>
+
+- Adding forms 
+- when a user enters data in a website , an HTML form submits an HTTP request containing the data to the server
+- forms are defined using the <form></form> tag
+	- optionanl attribute can be used is the "action" attribute , it specifies the path / url that the form should submit the request to
+		- if not speicified , reqeust is sent to the same page url
+	- another attribute is the "method" attribute ( can have 2 values GET or POST ) , which specifies the http method of the reuqest to be sent
+		- GET : retrieves info from the server      ,,, POST : send info to the server
+- fields added to the form using the input tag <input> ==> self closing tag ,, ex.\ <input type="" name="">
+- input fields can have labels , add it using the <label for=""> tag
+	- <input> tag can be written with or without a / at the end ==> <input> or <input />
+	- types of input tag : number , text , password , email , submit ,  checkbox , radio , file
+	- example : 
+	- <input type="text" name=inputName">						only one line of text
+	- <input type="checkbox" name=inputName" value="option1">		can check multiple options
+	- <input type="radio" name=inputName" value="option1">			only one option can be checked
+- some input fields are not used with the <input> tag , such :
+	- <textarea> </textarea>			can have multible lines of text
+	- <select name="food"> < /select>		drop down menu
+		- to add options ==> <option value="salad">Salad </option>
+
+								---------------------------------------------------------------------------------
+
+- Introduction to the DOM
+- imagine that your favorite web site is just html , users will be able to scroll , read , see pictures , BUT they won't be able to like posts , log in , get notifications , and so on 
+- so , we need a way to make users to interact with objects in the page
+- in another words , html docs should be represented in a certain way , so that JS code can query and update it ==> we do this through DOM ( doc obj model )
+- when the browser recieves a page , it constructs a DOM to represent it ( tree structure of html objects )
+- all html elements are represented as objects in the DOM tree ( div , p , text , ...etc )
+- using JS , you can manipulate the DOM tree and make the website more dynamic
+	- for each element you can access it's content and attributes ( and then you can chage the current content displayed in the page )
+	- you also can add \ delete dom objects dynamically
+	- JS and Dom can animate html elements
+	- many libraries and frame works rely on the dom ( like react )
+
+								---------------------------------------------------------------------------------
+
+- Web accessibility
+- when the "web accessibility initiative" or WAI was launched in 1997 , sir tim burners-lee said : the bower of the web is in it's universality access by everyone regardless of disabililty is an essentail aspect
+- WA aims to allow people with any disability ( not just visual ) to understand , navigae , and interact with websites
+	- disabilities : audio & visual , cognitive and neurological , physical and speech
+- W3C WAI develped specifications and supporting resources for accessibility => international standards
+- people with disability use assistive technologies to help them browsing the web
+	- screen readers software : used by blind people and vision impaired users , and also those with reading or learning difficulties
+	- speech recognition software can turn spoken words into computer commands , or dictate input fields
+		- used by people who can't use a mouse / keyboard due to physical , or neurological disabilities
+	- subtitles and video scripts provide assistance to those with audio and visual disabilities
+- there are many steps you can take to improve accessibility ( apply it when your building the project , not after you finish )
+- barriers to accessibility : 
+	- writing text that is not contained with proper tags ( not in any tag )
+	- using multiple consecutive line breaks <br> and adding spaces
+- one of the tasks of WAI is to define ARIA specification ( accessible rich internet application ) , that outline different techniques to improve accessibility for complex web pages
