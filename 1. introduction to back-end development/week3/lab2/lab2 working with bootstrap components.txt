@@ -1,0 +1,20 @@
+- goal : update your Little Lemon website to use bootstrap compnents
+- components ex.\ badge , alert , button
+
+- steps :
+1. open your index.html
+2. add a div below "our menu" div element with classes "alert alert-info"
+3. add a "role" attribute to the element with the value alert
+4. inside the alert element add the text "Our resturaunt will be closed on New Year's Day"
+5. add a badge component in a span in falafel <h2> element with class "bg-secondary"
+6. add a div after the last row element with class "row" and inside it put another div with class "col-12" 
+7. inside the col div add another with class "text-center" & inside it add a <button> with type="button" attribute and classes "btn btn-primary"
+8. add the text "Order Online" inside the button
+9. save the file and open the server to preview to the page in browser
+
+10. verify that : 
+- alert is displayed
+- new badge is displayed
+- button is displayed
+
+11. don't forget to close the server

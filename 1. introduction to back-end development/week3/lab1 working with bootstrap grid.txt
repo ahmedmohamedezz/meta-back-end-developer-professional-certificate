@@ -1,0 +1,19 @@
+- goal : create a 2-column food meny for little lemon web page
+
+- steps :
+1. open index.html
+2. add div.container
+3. add div.row*3
+4. in the first row add a div for the logo ( note : this div will fill the whole width of the screen )
+5. in the first row add a div inside the last div , with class="text-center" to center the logo
+	- the class "text-center" is used to center the contents of a div
+6. add the logo image with class="img-fluid"
+7. in the second row , add a div with class col-12
+8. in the second row inside the col-12 div , and put bootstrap class to center the text
+9. add an h1 element "Our Menu"
+10. add 2 div elements in the last row with classes ( col-12 , col-lg-6 )
+11. fill the 2 divs with the menu information ( falafel + pasta salad )
+12. save the file , and open the server 
+13. preview the page ==> http://localhost:port
+14. see how the page looks like at mac book 15 screen size ( menu should appear in 2 columns )
+15. don't forget to close the server

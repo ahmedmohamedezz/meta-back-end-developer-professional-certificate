@@ -1,0 +1,148 @@
+- Working With Libraries 
+
+- as a developer , you can try to build your website from scratch or you can use code that other developers created
+- when you deploy your app to a web server , you must include all the libraries and frameworks used with it 
+	- if you don't , you won't be able to call the API functions it needs to execute when you run it => that's why libraries & frameworks are called "dependencies"
+- in front end , you include libraries by referencing css and js files in your HTML file
+- one popular library used for creating user interfaces is the Bootstrap library => added in the head section using the <link href="" rel="stylesheet"> tag
+- bootstrap provides js libraries that enable enhanced functionalities => drop-downs & tooltips => added in body element using <script src=""> tag
+	- ex.\ adding a button => <button type="" class="btn btn-primary">Click Here ! </button>   ==> adds a button with the bootstrap primary color : blue
+- in day to day development , it can be more complicated => what if your dependencies depend on other libraries and frameworks ? it will form a "dependency tree"
+	- project can have hundreds of dependencies in it's tree ( it will take a long time to download , setup , and configure all of them )
+	- but , HOW do you know that you're using the same versions the rest of the team is using ? this is the role of "package managers"
+- package manager is a tool that automatically downloads and installs the dependencies ( dependencies = packages ) 
+	- can also provide the ability to publish your own packages
+	- for each dependency , you can specify the version and the package manager will download it for you 
+	- it takes care of the dependency tree for you => automatically download all the libraries needed so you don't have dependency issues using the APIs
+- most common package manager => "node package manager" or "npm" for short
+
+- adding all the packages in your html file would take forever => here comes the role of "bundling tools"
+- the purpose of a bundler is to automatically combine all dependencies into a single file ( or if they are too many => split into multiple bundles )
+- most common bundlers => "Gulp" and "Webpack"
+
+								----------------------------------------------------------------------
+
+- Introduction To Responsive Design
+
+- responsive design is responsible for adjusting the size of a website between different devices
+- responsive design means that a web page can grow or shrink based on the size of the screen
+- screens of our devices are made up from a hundreds of pixels
+- responsive design is a set of three practices that allows a website to automatically change its visuals => ( flexible grids + fluid images + media queries )
+
+1. flexible grids : 
+	- made up of columns , gutters ( space between columns ) , and margins ( space between content and left&right edges of the screen )
+	- instead of defining the size of elements in pixels => flex grids are defined in percentage values allowing them to adjust based on the screen size
+
+2. fluid images : 
+	- applied by setting the max-width property of the images to 100% 
+		=> imgs will shrink if thier container became narrower than the imgs size , but never grow larger if the container grows
+	- this allows imgs to scale to fit rather than overflow , and also it won't become larger ( pixelated ) if the column size became greater than the img size
+
+3. media queries : 
+	- allow developers to query the display ( size , orientation , and aspect ratio )
+
+- break point : point at which a websites content and layout will adapt to provide the best possible user experience
+- break points can function in different ways across 3 different grids ( fixed , fluid , and hyprid grids )
+
+1. fixed grid : has a fixed columns width and flexible margins ( has a fixed content )
+2. fluid (full width ) grid : fluid columns ( can grow or shri) + fixed gutters and margins
+3. hyprid grid : both fluid width + fixed width components
+
+								----------------------------------------------------------------------
+
+- Bootstrap
+
+- bootstrap is described as a way to "build fast & responsive sites" , and it's a "feature-packed , powerful , and extensible frontend toolkit"
+- bootstrap is library of css & js code that you can combine to quickly build visually appealing websites
+- modern web development is all about components. Small pieces of reusable code that allow you to build websites quickly. Bootstrap comes with multiple components for very fast construction of multiple components, or parts of components
+- another important aspect of modern development is responsive grids which allow web pages to adapt their layout and content depending on the device in which they are viewed. Bootstrap comes with a pre-made set of CSS rules for building a responsive grid
+- bootstrap saves significant time because all the CSS code that styles its grid and pre-built components is already written. Instead of having to have a high level of expertise in various CSS concepts, you can just use the existing Bootstrap CSS classes to produce nicely-looking websites. This is indispensable when you need to quickly iterate on website layouts
+
+								----------------------------------------------------------------------
+
+- bootstrap is a collection of pre-written code chuncks in css and js that allows you to create websites more quickly than if you had to create every bit of code from scratch ( time & efforts consuming )
+- bootrstap classes ex. \
+	1. container
+	2. row
+	3. col
+	4. img-fluid : ensure my image scales to its parent column's width
+	5. table
+
+- Bootstrap infixes and modifiers :
+- Bootstrap modifiers add a CSS class to change the visual style of components. You will use an infix to indicate the breakpoint in Bootstrap CSS rules.  
+1. Infixes
+	- you know that breakpoints are the triggers in bootstrap for how your layout changes from one device to another
+	- each infiex corresponds to specific screen size , and each has a name
+	- ex.\
+		- extra small 					==> screens < 567px		( has no infix => because it's the default breakpoint )
+		- small ( sm )					==> screens >= 567px
+		- medium ( md )					==> screens >= 768px
+		- large ( lg )					==> screens >= 992px
+		- extra large ( xl )				==> screens >= 1200px
+		- extra extra large ( xxl )			==> screens >= 1400px
+	- the abbreviations are used as infixes in css rules for the grid system in bootstrap ==> ( col-sm , col-lg , ...etc )
+
+2. Modifiers ( ex.\ class="alert alert-primary"		==> -primary is the modifier
+	- primary ==> display the element in the primary color in bootstrap => "blue"
+	- danger ==> "red"
+	- modifiers available => "primary, secondary, success, info, warning, danger, light, dark"
+- alerts are used to show info. that needs immediate attention ( warnings , errors , confimation msgs )
+
+- Bootstrap grid : 
+- the grid system in bootstrap has a width of 12 cols that can be fluid or fixed ==> div.class="col-6" , this div will fill half of the width
+- bootstrap grid system always has "container & rows & cols"
+	- container : root element of your grid ( contains pads and aligns your content )
+		- it's width is determined based on the current responsive breakpoint
+	- you can add rows ( and cols inside each one of them )
+	- if want to control the number of cols that element occupies => suffix a number to the class ==> col-6 , col-12 , ..etc
+- <div class="col-12 col-lg-6" ></div> ==> in desktop screens will have the width of 6 cols , and full width in mobile devices
+- if the cols exceed 12 => they will wrap to new row ==> col-12 : in mobile devices cols will stack on each other
+
+								----------------------------------------------------------------------
+
+- Bootstrap Documentation
+- refer to documentation at "https://getbootstrap.com/docs" to know more about bootstrap
+- on the left side of the page you will find category of different sections of sidebar ( layout , forms , content , ...etc )
+- forms section describes how to build forms using bootstrap styles
+	- ex.\ html element and the css classes can be used with them
+	- input ==> "form-control"
+	- input type="checkbox or radio" ==> "form-check-input"
+	- input type="range" ==> "form-range"
+	- select ==> "form-select"
+
+- Switches : bootstrap includes css rules to style checkbox input as switch
+- to do so ==> put the input inside a div element 
+	- give calsses "form-check form-switch" to the div
+	- give calsses "form-check-input" to the input ( type="checkbox" )
+
+- Input Groups : useful for providing additional content to the input field. 
+	- ex.\ if you wanted to request the user to input a US dollar amount, you can use an input group to show the dollar symbol and cents amount.
+- to do it :
+	- put the <input> inside a <div>
+	- give the div class="input-group"
+	- add <span> elements before and/or after the <input> and add class="input-group-text" to it
+	==> <span class="input-group-text">$</span>
+
+- Floating Labels : help provide form information to the user as part of the input itself. These are different from regular form placeholders. The information stays visible if the user is interacting with the element or if the element has content.
+- to do this :
+	- put the <input> inside a <div class="form-floating">
+	- put <label> after the input <label for="inpID"></label>
+- notes : 
+	- placeholder is required on each <input>
+	- <input> must come first before the <label>
+
+- finally , the Components section explains the requirements ( css & js ) of each component the page provides with code examples
+
+								----------------------------------------------------------------------
+
+- Other Css Libraries : 
+1. Foundation : framework for building user interfaces similar to Bootstrap. It is used by many large companies such as Pixar, Polar and Sonos. One prominent feature of Foundation is that it can be used to style content for sending via email.
+
+2. Pure.css : library for building user interfaces. While it doesn't have as many features as Bootstrap, it is designed to be minimal in file size. Smaller file sizes improve loading times for web pages as there is less data to transfer from the web server. If your next project is focused on minimal loading time, this library is worth considering.
+
+3. Tailwind CSS : framework that uses a utility-based approach for its CSS rules. This means that the framework provides many CSS classes with a single purpose. For example, the CSS class pt-6 sets the padding-top CSS property to 6 pixels. This means that you can be precise in applying styling to your HTML without writing CSS. The advantage to this is that it is more flexible for customizing your webpage's design using the framework. However, the disadvantage is that if multiple developers are working on a project, it could lead to inconsistent design if the team is not strict on its design rules.
+
+4. UIKit : lightweight CSS framework featuring a small set of responsive components. Its simple design allows developers to easily customize the style rules and visuals.
+
+5. MVP.css : small CSS library that automatically styles HTML elements without needing to apply CSS classes to them. The library aims to allow a developer to quickly prototype a user interface without worrying about the final design, while still being visually appealing. MVP comes from the technical term Minimal Viable Product, a product with sufficient features to demo to customers or other business stakeholders.
+

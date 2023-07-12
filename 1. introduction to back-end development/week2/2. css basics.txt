@@ -1,0 +1,110 @@
+- css tells the browser how to display the html elements on screen
+- css rules elements :
+	- css selector : indicate which element or elements to style
+	- css declaration block { delcalrations are inside curly brackets } :  each declaration is made up of 2 parts => property : value ;
+- css files are linked to html pages using the link tag => <link rel="stylesheet" href="cssFileName.css" />
+- css precedence and specifity contorls which css rule applies to which element(s) => hierarchy rules
+- browser chooses the most presice selector to style an html element
+							------------------------------------------------------------------------------------------
+- Selectors :
+1. element selector : specify exact type of elements => h1 , p , img , ...etc => using h1 , the rule will be applied to all h1 elements
+2. ID selector #id : uses the id attribute of html elements , applied to one element ( id's must be unique through out the page )
+3. class selectors .cls : select elements based on the class attribute ( many elements can have the same class )
+	- you can combine some selector like element+class selectors => p.introduction { ... }
+4. descendent selector .blog h1 { .... } : selects all h1 elements inside any element with class = "blog"
+5. child selectors : select immediate childs of some elements => #blog > h1 => all h1 that are children of the element having id="blog"
+6. pseudo class and elements selectors => :hover pseudo-class : apply style when hovering over some element => a:hover{ ... }
+
+							------------------------------------------------------------------------------------------
+
+- Text and color 
+- Color : there are 5 main ways to reference a color ( RGB , RGBA , HSL , hex , predefined names )
+  1. RGB : based on how human eye sees ( mix red , green , and blue colors )
+	- each value is defined as a number [0,255] representing the intensity of the color 
+		- red => 255 , 0 , 0
+		- black => 0 , 0 , 0   		and 		white => 255 , 255 , 255
+	- example => p { color: rgb(100,80,150) }
+
+  2. RGBA : extension to RGB , with added alpha channel that represents the opacity / transparency ( values for alpha [0 , 1.0]
+	- example => p { color: rgba(100,80,150, 0.5 ) }
+
+  3. HSL : hue/saturation/lightness , The aim of the model is to simplify mental visualization of the color that the value represents
+	- hue can be representing a rainbow into a circle , 0 degrees = red , 120 deg = green , 240 deg = blue ( degree vary from 0 to 360 )
+	- saturation is the distance from circle center to it's edge , 0% = color is more grey , 100% = full ( saturation values represented by percentage ) 
+	- lightness is the distance from bottom to top ( make the circle => cylinder in 3d ) , where the bottom is more black , and the top is more white
+		- values represented by % from 0 to 100 ,,, 0% : color is more black and 100% is more white
+	- example : color: hsl(0 , 50% , 75% )
+
+  4. Hex value : colors are represented using hexadecimal values
+	- hex values from are ( 0,1,2,3,4,5,6,7,8,9,A,B,C,D,E,F )
+	- example : color : #RRGGBB ( in red green blue format ) ==> rgb(255,0,0) is equal to #FF0000
+
+  5. predefined names : modern browsers support 140 predefined color names
+	- example : color : white
+
+- Text
+  1. text color : is set by the "color" property
+  2. font : font text is set by the "font-family" property , and the font size by "font-size"
+  3. text-transform : control the capitalization of the text cotent ==> text-transform: uppercase ; ( accept values : uppercase , lowercase , capitalize , none )
+	- none is the default value , which means text is displayed in the way it was written in html document
+  4. text-decoration : decorate the text ( accept values : underline , line-through , overline , none ) 
+	- none is the default value ( no text decoration )
+	- you can use this property to control ( color , thickness , and styling ) of the decoration
+		- or those can be set individually by properties ( text-decoration-line , text-decoration-style , text-decoration-color , text-decoration-thickness )
+	- text-decoration-style accept values ( solid , double , dotted , dashed , and wavy )
+	- text-decoration-style REQUIRES the decoration line to be set first , if it's not specified solid will be used
+  
+							------------------------------------------------------------------------------------------
+
+- Box model introduction 
+- when html and css files are downloaded from the server , the browser needs to know how to display them => so it allocates a rectangle or box to each element
+- css rules are applied to the boxes of the elements
+- every box consists of 4 parts ( content , padding , border , and margin )
+- content : actual content of the element ( text , img , ..etc ) , it's size ( content width & height )
+	- browsers calculate width and height of the elements automatically ( developers also can control them )
+	- properties used : width , min-width , max-width , and height , min-height , max-height
+- padding : extends the content size , it's size = "padding box width and height"
+	- thickness of padding is determined by : padding-top , padding-bottom , padding-left , padding-right
+	- padding box width = content width + padding left and right
+	- padding box height = content height + padding top and bottom
+- border : goes around the padding , it's size = "border box width and height"
+	- we have different types of borders : solid , dotted , dashed , double
+	- control the width through property => border-width : thin/medium/thick
+	- border box width = padding box width + border left and right              ( the same applies to height )
+- margin : extends the border and separate different elements
+	- margin box width = border box width + margin left and right              ( the same applies to height )
+	- set it's values using properties : margin-top , margin-bottom , margin-left , margin-right
+
+- you can set padding , border , margin through the shorthand properties
+- content = yourself , padding = thickness of your closes , border = silhouette / outline , margin = personal space between you and others
+
+							------------------------------------------------------------------------------------------
+
+- the web browsers normal way of calculating positions of html elements on the screen is called => document flow
+- nearly all elements in html are categorized into 2 types ( inline , block )
+- block level element will occupy the full width of the parent element , and the height of it's content
+	- each block element will have a new line before and after
+	- ex. / div element , form , and headings
+- inline elements will occupy the width and height of thier content
+	- they don't appear in a newline , hence the name inline 
+	- ex. / anchor , img , span , label , input , bold , italics , emphasis
+ 
+- multiple inline elements will form a row of elements , while multiple block elements will stack on each other
+- you can control how to display elements using the css property display: inline/block/... ;
+
+							------------------------------------------------------------------------------------------
+
+- Alignment basics
+1. Horizontal alignment
+  - text alignment : text within html elements can simply be aligned using the property text-align
+	=> text-align: left/right/center/justify
+	- the default is left for left-to-right languages like english , and right for languages like arabic
+	- justify : spreads the text so that every line of text has the same width
+  - html element alignment
+        - center alignment : to center an element , set a width to it and make the margin auto to fill out the available space
+	  - margin: auto ; ==> tells the browser to automatically calculate the remaining space and distribute it evenly on both sides of the element
+	  - notice , if you want to center an inline element , first you need to display it as a block level element
+       - left / right alignment
+ 	 - can be applied using the position and float properties 
+	 - float property set's an element position relative to the text content within the parent element ( text will wrap around the element )
+	 - ex. / float: right;

@@ -1,0 +1,6 @@
+- this folder contains examples on some bootstrap components and classes like :
+0. margins => mt-x and mb-x     ( 0 <= x <= 5 )
+1. forms
+2. switches
+3. input groups
+4. floating labels
