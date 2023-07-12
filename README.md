@@ -1,5 +1,5 @@
-# Meta Backend Developer Professional Certificate
-## Meta Back-end Course On Cousera Platform 
+# Meta Backend Developer Professional Certificate 
+Provided by Coursera Platform and Meta
 
 ### This Repo Contains Summary and Revision of The Courses in The Certificate
 
