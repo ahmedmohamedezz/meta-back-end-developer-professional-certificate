@@ -1,0 +1,138 @@
+- Static and Dynamic Content 
+- when you visit your favorite website , the recommentations you get differs from what your friends get => how can websites adapt to different user profiles
+- when you open a website the browser sends a request to the web server & the server responds with the conent of the web page
+	- this content can be static or dynamic
+- static content : is content that web server transfer them just as they stored on the web server ( ex.\ imgs , videos )
+
+- dynamic content : generated when the http request is made ( ex.\ when you visit a website , or based on user input , or based on the current date )
+	- generated while you use a website
+- what actually happens, is that the web server communicates with another kind of server, called an application server or a back-end
+- the application server generates the dynamic content that the web server sends back to the user's browser
+- dynamic content takes more time to be generated than static content
+- application server perfrom more complex processing than web servers , they have to ( run the app logic , communicate with DB , and check permissions )
+- to improve performance, different application servers have specific purposes. There are application servers for every type of content out there
+	- from music streaming to creating your own blog
+- building backend for app => building your own application server
+- since application servers do more processing => they have capacity on how many requests processed per second
+	- web servers can help improving this by "caching"
+- caching : web server keeps a copy from the dynamic content in the first request , if the content is req. again it responds with the cached version ( instead of passing the request again to the application server
+- after a peroid of time the web server updates the cache with the latest content
+
+									-------------------------------------------------------------------------------------
+
+- Single Page Applications
+- consider using "single page applcations" or "SPAs" to build unique , speedy , and engaging experience for your users
+	- ex.\ SPA apps : social media , maps , messaging apps
+
+- before modern JS frameworks , most websites were implemented as multi-page applications => this makes the app resource intensive to servers because senting entire web pages or every request consumes excessive bandwidth and uses CPU time to generate dynamic pages
+	- it your app is complex , the browsing experience will be slow ( and even slower if users has poor internet connection ) 
+- single page : means that there is only one html page is sent from the server to the browser , but that page will update it's content as users interacte with the website
+- in SPAs , you don't send new pages for every req. , but instead override the content of 1 web page => faster and more responsive experience
+
+- A SPA has two approaches to serving code and resources , (bundling ,  and lazy loading or code splitting )
+	1.  With bundling, when the browser requests the application, the server returns and loads all necessary HTML, CSS, and JavaScript immediately
+	2. With lazy loading, the browser requests the application and the server returns only the minimum HTML, CSS, and JavaScript needed to load the application. Additional resources are downloaded as required
+- The choice of which method to use depends on the size, complexity, and bandwidth requirements of the application
+
+- in traditional websites , with every req. the server sends back an eniter web page , but with SPAs the server responds with JSON ( java script object notation ) object  , which is read and rendered by the app ( and the rest of the page remains as it is )
+
+- what if you need to update the majority of the page ? in SPAs different pages are broken into "templates" or "views"
+	- each view will have HTML code that can be updated by the application
+- in SPAs , if all resources are delivered when the application is loaded, the single-page application must include the views for every page on initial load. If resources are loaded dynamically, the single-page application requests the views as required and stores views in the browser for subsequent requests
+
+									-------------------------------------------------------------------------------------
+
+- React : available since 2013 React is an open source library with a community of core contributors and companies that maintain it
+- developers use React to develop single page applications and you can also develop mobile applications with React native
+- you need to consider navigation , and how the app request data from servers
+- react is used in conjunction with other JavaScript libraries during development 
+
+- advantages of using react : 
+1. allows developers to write less code to create functionality
+2. this in turn makes it easier to maintain code in the long term 
+3. simplifies testing
+4. allows you to define components that you can combine to build a web application
+5. allows developers to re-use components when building their applications
+- because it is so central to front end development, there are many tools that you can use with the React. These tools can help you understand how React is running your code and how you can improve performance
+
+- component is basically a small piece of user interface, such as a music player or photo gallery. 
+- this component model allows you to do several things
+	=> such as developing and testing parts of application in isolation and it also allows you to reuse components across multiple sections of the application
+- there are in fact many open source libraries that provide pre made components for React projects.
+	- For example, if you want to add a video player to your website, there's a React component library for that. Well, maybe you want to embed a map. There's a 	  React component library for that too
+
+									-------------------------------------------------------------------------------------
+
+- Why facebook engineers build react ?
+
+* React isn’t an MVC ( model view controller ) framework , React is a library for building composable user interfaces. It encourages the creation of reusable UI components which present data that changes over time.
+
+* React doesn’t use templates
+	- Traditionally, web application UIs are built using templates or HTML directives. These templates dictate the full set of abstractions that you are allowed to 	   use to build your UI.
+	- React approaches building user interfaces differently by breaking them into components. This means React uses a real, full-featured programming language to 	  render views, which we see as an advantage over templates for a few reasons:
+		1. JavaScript is a flexible, powerful programming language with the ability to build abstractions. This is incredibly important in large applications.
+		2. By unifying your markup with its corresponding view logic, React can actually make views easier to extend and maintain.
+		3. By baking an understanding of markup and content into JavaScript, there’s no manual string concatenation and therefore less surface area for XSS 		  		    vulnerabilities.
+
+* React updates are dead simple ( React really shines when your data changes over time )
+- in a traditional JavaScript application, you need to look at what data changed and imperatively make changes to the DOM to keep it up-to-date. Even AngularJS, which            	provides a declarative interface via directives and data binding requires a "linking function to manually update DOM nodes"
+- React takes a different approach.
+- When your component is first initialized, the "render" method is called, generating a lightweight representation of your view. From that representation, a string of markup 	is produced and injected into the document. When your data changes, the render method is called again. In order to perform updates as efficiently as possible, we diff 	the return value from the previous call to render with the new one and generate a minimal set of changes to be applied to the DOM.
+- The data returned from render is neither a string nor a DOM node — it’s a lightweight description of what the DOM should look like.
+- We call this process "reconciliation"
+- Because this re-render is so fast (around 1ms), the developer doesn’t need to explicitly specify data bindings. We’ve found this approach makes it easier to build apps
+
+
+* Because React has its own lightweight representation of the document, we can do some pretty cool things with it:
+- facebook has dynamic charts that render to <canvas> instead of HTML.
+- instagram is a “single page” web app built entirely with React and Backbone.Router. Designers regularly contribute React code with JSX.
+- we’ve built internal prototypes that run React apps in a web worker and use React to drive native iOS views via an Objective-C bridge.
+- you can run React on the server for SEO, performance, code sharing and overall flexibility.
+- events behave in a consistent, standards-compliant way in all browsers (including IE8) and automatically use event delegation.
+
+									-------------------------------------------------------------------------------------
+
+- How React Works ?
+- untill now you know that react allows dev. to build components to develop UIs  , but how react components turn into elements on the web page ?
+- Remember when your web browser receives an HTML page, it constructs a DOM, to represent it. But updating the DOM is considered expensive, because it is very time intensive for the web browser to do so. Every time the browser DOM is updated, it causes the browser to re compute the page
+- react components has a "one to one "relationship to HTML elements that is displayed on the webpage
+- react tracks html elements by building it's own dom ( virtual DOM ) and store it in memory , when it builds out it's tree of components
+- virtual DOM is a representation of the browser DOM
+- React checks if the HTML components in the virtual DOM matches the browser DOM. If a change is required, the browser dome is updated => "reconciliation" process
+	=> when react component is updated the virtual DOM is updated and compared to the last virtual DOM, and determine which elements changed ( if any ) 
+		=> only the changed elements are updated in the browser DOM causing the displayed web page to change
+
+									-------------------------------------------------------------------------------------
+
+- The Virtual DOM
+- React builds a representation of the browser Document Object Model or DOM in memory called the virtual DOM. As components are updated, React checks to see if the component’s HTML code in the virtual DOM matches the browser DOM. If a change is required, the browser DOM is updated. If nothing has changed, then no update is performed. ( reconciliation process : update vDom => compare and check => update browser DOM => update web page )
+
+- as updating the browser DOM can be a slow operation, this process helps to reduce the number of updates to the browser DOM by only updating when it is necessary.
+- but even with this process, if a lot of elements are updated by an event, pushing the update to the browser DOM can still be expensive and cause slow performance in the web application.
+- the React team invested many years of research into solving this problem. The outcome of that research is what’s known as the React Fiber Architecture.
+
+- The Fiber Architecture allows React to incrementally render the web page. What this means is that instead of immediately updating the browser DOM with all virtual DOM changes, React can spread the update over time
+	=> update the visible parts of the page first ( higher priority )
+
+- There are many tools available to help you investigate how React is processing your webpage. The official React Developer Tools web browser plugin developed by Meta will be one of the key tools in your developer toolbox
+
+									-------------------------------------------------------------------------------------
+
+- Component Hierarchy 
+- every react app has atleast 1 component ==> root / app component
+- other components are added to the app component making a tree structure on components forming the application
+	=> components can be determined like the <div> distribution in the page , ex.\ component in place of ( navbar , headers , body , aside , ..etc )
+
+									-------------------------------------------------------------------------------------
+
+- Alternatives to React ( libraries commonly used with react )
+1. Lodash : As a developer, there's a lot of logic you'll commonly write across applications. For example, you might need to sort a list of items or round a number such as 3.14 to 3. Lodash provides common logic such as these as a utility library to save you time as a developer.
+
+2. Luxon : You'll be working with dates and times often as a developer. Think of viewing a list of orders and when they were placed, or displaying a calendar schedule for an event. Dates and times are everywhere.
+	- Luxon helps you work with dates and times by providing functions to manipulate and display them. For example, think of how dates are formatted in different countries. In the United States the format is Month Day Year but in Europe it is Day Month Year. This is one area where Luxon can help you display the date in the user's local format.
+
+3. Redux : When building a web application, you'll need to keep track of its state. Think of when you shop online. The web application tracks items currently in your shopping cart. When you remove an item from the cart, the application needs to update what displays on the screen. This is where Redux comes in. It helps you manage your application state and even has advanced features such as undo and redo.
+
+4. Axios : As a developer you'll be communicating with APIs over HTTP frequently. The Axios library helps to simplify sending HTTP requests and processing the response. It also provides advanced features allowing you to cancel requests and to change data received from the web server before your application uses the data.
+
+5. Jest : It is good practice to write automated tests for your code as a professional developer. The jest library helps you to do this and works with many libraries and frameworks. It also provides reporting utilities such as providing information on how much of your code is tested by your automated tests.
