@@ -1,0 +1,16 @@
+- goal : use bootstrap to build your biographical page
+
+- steps :
+1. add a div element to the <body> with class "container"
+2. inside the container put div.row and inside it 2 divs (columns) with ids ( "bio" , and "more" )
+3. adjust the column divs to be displayed in 12 col in mobile , and 6 in desktop
+4. add class "text-center" to the "bio" div , and inside it add <h1> with your name and <img class="img-fluild" src="" > with your photo
+5. in the "more" div
+	a. add <h2> and <ul> with your favorite music artists
+	b. add <h2> and <ol> with your favorite movies
+6. after the <ol> in "more" div
+	a. add <a href="your meta profile">text</a>
+	b. add class="btn" to your anchor to be displayes as a button
+	c. apply the primary modifier to display the button with the primary color in bootstrap
+7. save the file , open the server , and preview what you've made in the browser
+8. don't forget to close the server after you finish
